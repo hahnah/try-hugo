@@ -1,0 +1,9 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
+
+[params]
+  description = "Your bio text goes here"
+  featured_image = "/images/header.jpg"
+  site_logo = "/images/logo.png"

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main>
+  {{ .Content }}
+
+  <div class="recent-posts">
+    <h2>Recent Posts</h2>
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+    <article>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+      {{ .Summary }}
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="recent-life-blogs">
+    <h2>Recent Life Blogs</h2>
+    {{ range first 5 (where .Site.RegularPages "Section" "life-blogs") }}
+    <article>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+      {{ .Summary }}
+    </article>
+    {{ end }}
+  </div>
+</main>
+{{ end }}
